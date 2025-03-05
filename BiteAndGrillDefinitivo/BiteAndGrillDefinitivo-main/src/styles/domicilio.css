@@ -1,0 +1,608 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la pantalla */
+    background-color: #000000;
+}
+
+/* Estilos para el navbar */
+.navbar {
+    background-color: #E50000;
+    /* Color rojo */
+    display: flex;
+    justify-content: space-between;
+    /* Espacio entre logo y enlaces */
+    align-items: center;
+    /* Centrado vertical */
+    padding: 10px 20px;
+    /* Espaciado interno */
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.navbar .logo {
+    color: #FFFFFF;
+    /* Texto blanco */
+    font-weight: bold;
+    /* Negrita */
+    font-size: 1.5rem;
+    /* Tamaño del logo */
+    text-decoration: none;
+    /* Sin subrayado */
+}
+
+/* Estilos para los enlaces de navegación */
+.navbar .nav-links {
+    flex-grow: 1;
+    /* Para usar el espacio disponible */
+    display: flex;
+    justify-content: center;
+    /* Centra los enlaces */
+    gap: 90px;
+    /* Espaciado entre enlaces */
+}
+
+/* Enlaces en la barra de navegación */
+.navbar .nav-links a {
+    color: #FFFFFF;
+    /* Texto blanco */
+    font-weight: bold;
+    /* Negrita */
+    font-size: 35px;
+    /* Tamaño grande de texto para los enlaces */
+    text-decoration: none;
+    /* Sin subrayado */
+}
+
+/* Efecto hover para los enlaces */
+.navbar .nav-links a:hover {
+    color: #E50000;
+    /* Color de relleno rojo */
+    -webkit-text-stroke: 1px white;
+    /* Borde blanco */
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-links a {
+        font-size: 24px;
+        /* Reduce el tamaño de los enlaces en pantallas pequeñas */
+    }
+
+    .navbar .nav-links {
+        gap: 30px;
+        /* Reduce el espacio entre enlaces */
+    }
+}
+
+footer {
+    background-color: #E50000;
+    color: white;
+    text-align: center;
+    padding-bottom: 8px;
+    padding-top: 5px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer-rail {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin-top: 5px;
+    height: 2rem;
+}
+
+.rail-content {
+    display: flex;
+    white-space: nowrap;
+    animation: slide 15s linear infinite;
+}
+
+.footer-rail h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 5px;
+    margin-bottom: 0px;
+    font-style: italic;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.contenedor-footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 10px;
+}
+
+.contenedor-footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.texto-blanco {
+    color: white;
+}
+
+.texto-borde {
+    color: #E50000;
+    -webkit-text-stroke: 1px white;
+}
+
+.contenedor-footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #E50000;
+    color: white;
+}
+
+.contenedor-footer div {
+    flex: 1;
+    min-width: 200px;
+
+}
+
+.contenedor-footer a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.contenedor-footer a:hover {
+    color: #E50000;
+    -webkit-text-stroke: 1px white;
+}
+
+.title {
+    font-weight: 600;
+    display: inline;
+    
+}
+
+
+.title a {
+    display: inline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #FFD700; /* Color dorado al pasar el cursor */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .contenedor-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+    .contenedor-footer div {
+        width: 100%;
+        min-width: unset;
+    }
+    .contenedor-footer a {
+        font-size: 14px;
+    }
+    .footer-rail h4 {
+        font-size: 1rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: rgba(229, 0, 0, 0.95);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly; /* Distribuye uniformemente las opciones */
+        align-items: center;
+        width: 100%;
+        height: auto; 
+        max-width: 300px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 9;
+        box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 0 0 8px 8px;
+        overflow: hidden;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        flex: none; /* Elimina el comportamiento de expansión automática */
+        display: flex; /* Centra el contenido */
+        justify-content: center;
+        align-items: center;
+        height: 50px; /* Fija una altura más compacta */
+        width: 100%; /* Asegura que ocupen todo el ancho del menú */
+        text-align: center;
+        color: #fff;
+        font-size: 16px; /* Tamaño de texto más pequeño */
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        box-sizing: border-box; /* Incluye los bordes y padding */
+    }
+
+    .nav-links a:hover {
+        background-color: #fff;
+        color: #E50000;
+    }
+
+    .nav-links a:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Más delgado y menos visible */
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-footer {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .contenedor-footer a {
+        font-size: 12px;
+    }
+
+    .footer-rail h4 {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+
+.contenedor {
+    flex-grow: 1; /* Permite que este contenedor crezca para ocupar espacio */
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ambos elementos tendrán la misma altura */
+    gap: 20px;
+    padding: 25px 10%; /* Márgenes uniformes */
+}
+
+.menu,
+.cesta {
+    background-color: #e0e0e0;
+    padding: 5%;
+    border-radius: 4px;
+    height: 600px; /* Altura fija para mantener proporción */
+    overflow-y: auto;
+}
+
+.menu {
+    width: 60%;
+}
+
+.cesta {
+    width: 35%;
+}
+
+/* Barra de desplazamiento personalizada */
+.menu::-webkit-scrollbar,
+.cesta::-webkit-scrollbar {
+    width: 12px;
+}
+
+.menu::-webkit-scrollbar-thumb,
+.cesta::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+}
+
+.menu::-webkit-scrollbar-thumb:hover,
+.cesta::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.menu::-webkit-scrollbar-track,
+.cesta::-webkit-scrollbar-track {
+    background-color: #c0c0c0;
+}
+
+
+
+h2 {
+    margin: 0 0 20px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c0c0c0;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.item:hover {
+    background-color: #b0b0b0;
+}
+
+.cesta-item {
+    display: grid;
+    grid-template-columns: 3fr 0.8fr 0.8fr 0.8fr 1fr auto;
+    align-items: center;
+    background-color: #c0c0c0;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    gap: 5px;
+}
+
+.cesta-item span {
+    text-align: left;
+}
+
+.cesta-item .quantity {
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    width: 30px;
+    line-height: 30px;
+    margin: 0;
+}
+
+.cesta-item button.decrease,
+.cesta-item button.increase {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.cesta-item span.price {
+    text-align: right;
+    font-weight: bold;
+    font-size: 16px;
+    width: 55px;
+    line-height: 30px;
+    display: inline-block;
+}
+
+.cesta-item button.remove {
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagar {
+    text-align: center;
+    margin-top: auto;
+}
+
+.pagar button {
+    width: 100%;
+    padding: 10px;
+    background-color: #c0c0c0;
+    border: none;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagar button:hover {
+    background-color: #b0b0b0;
+}
+
+/* RESPONSIVIDAD */
+
+/* Pantallas medianas (tablets, móviles horizontales) */
+@media (max-width: 768px) {
+    .cesta {
+        height: 500px; /* Reduce la altura en pantallas medianas */
+    }
+
+    .cesta-item {
+        grid-template-columns: 2fr 0.6fr 0.6fr 0.6fr 0.8fr auto; /* Ajuste para columnas más compactas */
+        gap: 4px; /* Reduce el espaciado */
+    }
+
+    .cesta-item span.price {
+        width: 50px; /* Ajusta el ancho del precio */
+    }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    .cesta {
+        height: 400px; /* Altura menor para móviles */
+        padding: 10px; /* Menos padding interno */
+    }
+
+    .cesta-item {
+        grid-template-columns: 1fr auto; /* Columnas ajustadas a dos filas */
+        grid-template-rows: auto auto; /* Elementos distribuidos en dos filas */
+        text-align: left;
+        gap: 6px; /* Espaciado entre filas */
+    }
+
+    .cesta-item span.price,
+    .cesta-item button.remove {
+        grid-column: 2; /* Precio y botón "X" en la segunda columna */
+        justify-self: end; /* Alinea a la derecha */
+    }
+
+    .cesta-item button.decrease,
+    .cesta-item button.increase,
+    .cesta-item .quantity {
+        justify-self: start; /* Alinea los controles de cantidad a la izquierda */
+    }
+}
+
+
+
+
+
+.cantidad-control {
+    display: flex;
+    align-items: center; /* Alinea verticalmente al centro */
+    justify-content: center; /* Alinea horizontalmente al centro */
+    gap: 10px; /* Espacio entre botones y número */
+}
+
+.cantidad-control button {
+    width: 30px; /* Ancho uniforme para los botones */
+    height: 30px; /* Altura uniforme */
+    display: flex;
+    align-items: center; /* Centra el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    background-color: #e0e0e0;
+    border: 1px solid #aaa;
+    border-radius: 50%; /* Hace los botones circulares */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+.cantidad-control button:hover {
+    background-color: #b0b0b0;
+}
+
+.pagar {
+    text-align: center;
+    margin-top: auto;
+    /* Empuja el botón al final */
+}
+
+.pagar button {
+    width: 100%;
+    padding: 10px;
+    background-color: #c0c0c0;
+    border: none;
+    color: black;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagar button:hover {
+    background-color: #b0b0b0;
+}
+
+/* Ajustes para el menú hamburguesa */
+.menu-toggle {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Responsividad para el menú hamburguesa */
+  @media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+  
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: rgba(229, 0, 0, 0.95);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 300px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 9;
+        box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 0 0 8px 8px;
+        overflow: hidden;
+    }
+  
+    .nav-links.active {
+        transform: translateX(0);
+    }
+  
+    .nav-links a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px; /* Altura uniforme */
+        width: 100%; /* Ocupa todo el ancho */
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  
+    .nav-links a:hover {
+        background-color: #fff;
+        color: #E50000;
+    }
+  
+    .nav-links a:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }

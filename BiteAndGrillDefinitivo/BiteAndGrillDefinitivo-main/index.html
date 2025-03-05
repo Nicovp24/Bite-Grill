@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=description content="El mejor lugar para tus hamburguesas">
+    <title>Bite & Grill</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="src/styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="src/images/logo.png" alt="Logo Bite&Grill" class="logo-img">
+            </a>
+            <!-- Botón de menú hamburguesa -->
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- Enlaces de navegación -->
+            <div class="nav-links">
+                <a href="src/other/carta.html">CARTA</a>
+                <a href="src/other/domicilio.html">A DOMICILIO</a>
+                <a href="src/other/reserva.html">RESERVAS</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="video-background">
+        <video autoplay muted loop playsinline aria-hidden="true">
+            <source src="src/video/background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="overlay">
+        <div class="text-content">
+            <h1>Bienvenido a Bite & Grill</h1>
+            <h2>El mejor lugar para tus hamburguesas.</h2>
+        </div>
+        <img src="src/images/hamburguesa-inicio.png" alt="Burger" class="burger">
+    </div>
+
+
+    <footer>
+        <div class="contenedor-footer">
+            <div>
+                <a href="index.html">INICIO</a>
+                <a href="src/other/carta.html">CARTA</a>
+                <a href="src/other/domicilio.html">A DOMICILIO</a>
+                <a href="src/other/reserva.html">RESERVAS</a>
+            </div>
+
+            <div>
+                <span class="title">REDES SOCIALES</span>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/" class="social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.x.com/" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                </div>
+                <span class="title"> ©Bite&Grill 2025 | 
+                    <a href="src/other/aviso.html">Aviso Legal</a>
+                </span>
+            </div>
+
+            <div>
+                <a href="src/other/privacidad.html">POLÍTICA DE PRIVACIDAD</a>
+                <a href="src/other/cookies.html">POLÍTICA DE COOKIES</a>
+                <a href="src/other/faq.html">PREGUNTAS FRECUENTES</a>
+                <a href="src/other/contacto.html">CONTACTO</a>
+            </div>
+        </div>
+
+        <div class="footer-rail">
+            <div class="rail-content">
+                <h4 class="texto-blanco">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-borde">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-blanco">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-borde">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-blanco">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-borde">NACIDOS PARA MORDER</h4>
+            </div>
+            <div class="rail-content">
+                <h4 class="texto-blanco">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-borde">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-blanco">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-borde">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-blanco">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-borde">NACIDOS PARA MORDER</h4>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Control del menú hamburguesa
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+
+            menuToggle.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+        });
+    </script>
+</body>
+<div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background: #333; color: white; padding: 15px; text-align: center; z-index: 1000;">
+    <p>🍪 Usamos cookies para mejorar tu experiencia en nuestro sitio web.</p>
+    <button onclick="setCookies('accepted')" aria-label="Aceptar cookies">Aceptar</button>
+    <button onclick="setCookies('rejected')" aria-label="Rechazar cookies">Rechazar</button>
+    <button onclick="customizeCookies()" aria-label="Personalizar cookies">Personalizar</button>
+</div>
+
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+    // Verifica si el estado de cookies ya está guardado en localStorage
+    if (localStorage.getItem("cookiesAccepted") === "accepted" || localStorage.getItem("cookiesAccepted") === "rejected") {
+        document.getElementById("cookie-banner").style.display = "none";  // Oculta el banner si ya fue aceptado o rechazado
+    }
+});
+
+function setCookies(status) {
+    fetch("http://localhost/BiteAndGrill/src/backend/cookies.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "cookiesStatus=" + status,
+        mode: "cors"
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("Respuesta del servidor:", data); // Para depuración
+        localStorage.setItem("cookiesAccepted", status); // Guarda estado en localStorage
+        document.getElementById("cookie-banner").style.display = "none"; // Oculta el banner después de aceptar/rechazar
+    })
+    .catch(error => console.error("Error:", error));
+}
+
+function customizeCookies() {
+    alert("Aquí podrías abrir un menú de configuración de cookies con más opciones.");
+}
+</script>
+
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name=description content="El mejor lugar para tus hamburguesas">
+    <title>Bite & Grill</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../styles/privacidad.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <!-- Logo -->
+            <a href="../../index.html" class="logo">
+                <img src="../images/logo.png" alt="Logo Bite&Grill" class="logo-img">
+            </a>
+            <!-- Botón de menú hamburguesa -->
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- Enlaces de navegación -->
+            <div class="nav-links">
+                <a href="../other/carta.html">CARTA</a>
+                <a href="../other/domicilio.html">A DOMICILIO</a>
+                <a href="../other/reserva.html">RESERVAS</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h2>¿Qué son las cookies?</h2>
+        <p>Las cookies son pequeños archivos de texto que los sitios web almacenan en tu dispositivo cuando los visitas. Estas permiten reconocer tu dispositivo y recordar tus preferencias para mejorar tu navegación.</p>
+        
+        <h2>Tipos de cookies que utilizamos</h2>
+        <ul>
+            <li><strong>Cookies esenciales:</strong> Son necesarias para el funcionamiento de la página web y no pueden desactivarse en nuestros sistemas.</li>
+            <li><strong>Cookies de rendimiento:</strong> Nos permiten analizar el tráfico y mejorar el rendimiento de nuestro sitio web.</li>
+            <li><strong>Cookies de funcionalidad:</strong> Permiten recordar configuraciones personalizadas, como el idioma o la región.</li>
+            <li><strong>Cookies de publicidad y marketing:</strong> Utilizadas para ofrecerte anuncios personalizados en función de tus intereses.</li>
+        </ul>
+        
+        <h2>¿Cómo aceptar y gestionar las cookies?</h2>
+        <p>Cuando visitas nuestro sitio web por primera vez, aparecerá un banner de cookies donde podrás:</p>
+        <ul>
+            <li><strong>Aceptar todas las cookies</strong> para una experiencia completa.</li>
+            <li><strong>Rechazar cookies no esenciales</strong> manteniendo solo las necesarias para el funcionamiento del sitio.</li>
+            <li><strong>Personalizar preferencias</strong> para seleccionar qué tipos de cookies deseas permitir.</li>
+        </ul>
+        <p>También puedes gestionar o desactivar las cookies en cualquier momento a través de la configuración de tu navegador. Ten en cuenta que al deshabilitar algunas cookies, la funcionalidad de la web puede verse afectada.</p>
+        
+        <h2>Cambios en la política de cookies</h2>
+        <p>Podemos actualizar esta política periódicamente. Cualquier cambio será publicado en esta página con la fecha de actualización.</p>
+        
+        <p>Si tienes dudas, contáctanos en <strong>biteandgrill@gmail.com</strong>.</p>
+    </div>
+
+    <footer>
+        <div class="contenedor-footer">
+            <div>
+                <a href="../../index.html">INICIO</a>
+                <a href="../other/carta.html">CARTA</a>
+                <a href="../other/domicilio.html">A DOMICILIO</a>
+                <a href="../other/reserva.html">RESERVAS</a>
+            </div>
+            
+            <div>
+                <span class="title">REDES SOCIALES</span>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/" class="social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.x.com/" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                </div>
+                <span class="title"> ©Bite&Grill 2025 | 
+                    <a href="../other/aviso.html">Aviso Legal</a>
+                </span>
+            </div>
+            
+            <div>
+                <a href="../other/privacidad.html">POLÍTICA DE PRIVACIDAD</a>
+                <a href="../other/cookies.html">POLÍTICA DE COOKIES</a>
+                <a href="../other/faq.html">PREGUNTAS FRECUENTES</a>
+                <a href="../other/contacto.html">CONTACTO</a>
+            </div>
+        </div>
+
+        <div class="footer-rail">
+            <div class="rail-content">
+                <h4 class="texto-blanco">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-borde">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-blanco">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-borde">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-blanco">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-borde">NACIDOS PARA MORDER</h4>
+            </div>
+            <div class="rail-content">
+                <h4 class="texto-blanco">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-borde">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-blanco">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-borde">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-blanco">NACIDOS PARA MORDER</h4>
+                <h4 class="texto-borde">NACIDOS PARA MORDER</h4>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Control del menú hamburguesa
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+
+            menuToggle.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+        });
+    </script>
+    <div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background: #333; color: white; padding: 10px; text-align: center;">
+        🍪 Usamos cookies para mejorar tu experiencia. 
+        <button onclick="acceptCookies()">Aceptar</button>
+        <button onclick="rejectCookies()">Rechazar</button>
+        <button onclick="customizeCookies()">Personalizar</button>
+    </div>
+    
+    <script>
+        function acceptCookies() {
+            localStorage.setItem("cookiesAccepted", "true");
+            document.getElementById("cookie-banner").style.display = "none";
+        }
+    
+        function rejectCookies() {
+            localStorage.setItem("cookiesAccepted", "false");
+            document.getElementById("cookie-banner").style.display = "none";
+        }
+    
+        function customizeCookies() {
+            alert("Aquí podrías abrir un menú de configuración de cookies.");
+        }
+    
+        if (localStorage.getItem("cookiesAccepted") !== null) {
+            document.getElementById("cookie-banner").style.display = "none";
+        }
+    </script>
+    
+</body>
+
+</html>
